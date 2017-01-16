@@ -11,7 +11,7 @@ import java.text.NumberFormat;
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
-    int price =5;
+    int price = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,34 +24,31 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-       // display(quantity);
-        String priceMessage ="Free";
-        displayMessage(priceMessage);
-        displayPrice(quantity*price);
+        String message = "Total " + quantity * price + "$";
+        displayMessage(message);
+
     }
 
     /**
-     This is the increment method
-
+     * This is the increment method
      */
-    public void increment(View view)
-    {
+    public void increment(View view) {
 
         quantity++;
         display(quantity);
-       // displayPrice(quantity*price);
+        // displayPrice(quantity*price);
     }
+
     /**
      * This is the decrement method
      */
-    public void decrement(View view)
-    {
-        if(quantity>1) {
+    public void decrement(View view) {
+        if (quantity > 1) {
             quantity--;
         }
 
         display(quantity);
-       // displayPrice(quantity*price);
+        // displayPrice(quantity*price);
     }
 
 
@@ -74,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
     /*
         This method displays a message on the screen
      */
-    private void displayMessage(String message)
-    {
+    private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
     }
