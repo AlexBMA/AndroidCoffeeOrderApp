@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
 
        // display(quantity);
+        String priceMessage ="Free";
+        displayMessage(priceMessage);
         displayPrice(quantity*price);
     }
 
@@ -69,5 +71,13 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
+    /*
+        This method displays a message on the screen
+     */
+    private void displayMessage(String message)
+    {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
+    }
 
 }
