@@ -10,7 +10,7 @@ import java.text.NumberFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 1;
+    int quantity = 0;
     int price =5;
 
     @Override
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        display(quantity);
+       // display(quantity);
         displayPrice(quantity*price);
     }
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         quantity++;
         display(quantity);
-        displayPrice(quantity*price);
+       // displayPrice(quantity*price);
     }
     /**
      * This is the decrement method
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         display(quantity);
-        displayPrice(quantity*price);
+       // displayPrice(quantity*price);
     }
 
 
