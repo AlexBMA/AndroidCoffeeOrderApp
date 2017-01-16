@@ -1,5 +1,6 @@
 package com.example.alexandru.justjava;
 
+import android.content.SyncStatusObserver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.*;
@@ -26,6 +27,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     This is the increment method
+
+     */
+    public void increment(View view)
+    {
+        int quantity = 3;
+        int price =5;
+        display(quantity);
+        displayPrice(quantity*price);
+    }
+    /**
+     * This is the decrement method
+     */
+    public void decrement(View view)
+    {   int quantity = 1;
+        int price =5;
+        display(quantity);
+        displayPrice(quantity*price);
+    }
+
+
+    /**
      * This method displays the given quantity value on the screen.
      */
     private void display(int number) {
@@ -40,4 +63,6 @@ public class MainActivity extends AppCompatActivity {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
+
+
 }
