@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void increment(View view)
     {
-        int quantity = 3;
+        int quantity = 2;
         int price =5;
+        quantity++;
         display(quantity);
         displayPrice(quantity*price);
     }
@@ -41,8 +42,9 @@ public class MainActivity extends AppCompatActivity {
      * This is the decrement method
      */
     public void decrement(View view)
-    {   int quantity = 1;
+    {   int quantity = 2;
         int price =5;
+        quantity--;
         display(quantity);
         displayPrice(quantity*price);
     }
