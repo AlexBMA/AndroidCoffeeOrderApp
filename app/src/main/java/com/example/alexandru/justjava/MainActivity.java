@@ -8,10 +8,13 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+import static android.R.id.message;
+
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     int price = 5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +27,36 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        String message = "Total " + quantity * price + "$";
+        String message = createOrderSummary(quantity);
         displayMessage(message);
 
+    }
+
+    /**
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return the price
+     */
+    private int calculatePrice() {
+        int total = 0;
+        total = quantity * price;
+        return total;
+    }
+
+    /**
+     *  Creates a summary for the order
+     *
+     */
+
+    public String createOrderSummary(int number) {
+        String name = "Alex Burghelea";
+
+        String message = "Name: " + name +
+                         "\nQuantity: " + quantity +
+                         "\nTotal: " + calculatePrice() +
+                         "$" + "\nThank you";
+
+        return message;
     }
 
     /**
@@ -68,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
-    /*
-        This method displays a message on the screen
+    /**
+     * This method displays a message on the screen
      */
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
