@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import java.text.NumberFormat;
 
+import static android.R.attr.y;
 import static android.R.id.message;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        String message = createOrderSummary(quantity);
+        String message = createOrderSummary();
         displayMessage(message);
 
     }
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
      *
      */
 
-    public String createOrderSummary(int number) {
+    public String createOrderSummary() {
         String name = "Alex Burghelea";
 
         String message = "Name: " + name +
