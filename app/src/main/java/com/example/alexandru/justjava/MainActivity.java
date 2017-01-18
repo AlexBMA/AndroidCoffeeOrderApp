@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     boolean hasWhippedCream;
     boolean hasChocolate;
     String name;
+    int priceWhippedCream = 1;
+    int priceChocolate = 2;
 
 
     @Override
@@ -45,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
      * @return the price
      */
     private int calculatePrice() {
+
+        if (hasChocolate && hasWhippedCream)
+            return quantity * (price + priceChocolate + priceWhippedCream);
+        if (hasChocolate) return quantity * (price + priceChocolate);
+        if (hasWhippedCream) return quantity * (price + priceWhippedCream);
 
         return quantity * price;
     }
