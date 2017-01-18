@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 0;
     int price = 5;
     boolean hasWhippedCream;
+    boolean hasChocolate;
 
 
     @Override
@@ -24,8 +25,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
-        CheckBox checkBoxWhippedCream = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
-        hasWhippedCream = checkBoxWhippedCream.isChecked();
+        CheckBox checkBox = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
+        hasWhippedCream = checkBox.isChecked();
+        checkBox = (CheckBox) findViewById(R.id.checkbox_chocolate);
+        hasChocolate = checkBox.isChecked();
 
         String message = createOrderSummary();
         displayMessage(message);
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         String message = "Name: " + name +
                 "\nAdd whipped cream? " + hasWhippedCream +
+                "\nAdd whipped cream? " + hasChocolate +
                 "\nQuantity: " + quantity +
                 "\nTotal: " + calculatePrice() +
                 "$" + "\nThank you";
