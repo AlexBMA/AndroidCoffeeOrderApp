@@ -1,20 +1,16 @@
 package com.example.alexandru.justjava;
 
-import android.content.SyncStatusObserver;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.*;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
-
-import java.text.NumberFormat;
-
-import static android.R.attr.y;
-import static android.R.id.message;
 
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     int price = 5;
+    boolean hasWhippedCream;
 
 
     @Override
@@ -27,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+
+        CheckBox checkBoxWhippedCream = (CheckBox) findViewById(R.id.checkbox_whipped_cream);
+        hasWhippedCream = checkBoxWhippedCream.isChecked();
 
         String message = createOrderSummary();
         displayMessage(message);
@@ -45,13 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Creates a summary for the order
+     *
      * @return text summary
      */
 
     private String createOrderSummary() {
+
         String name = "Alex Burghelea";
 
+
         String message = "Name: " + name +
+                "\nAdd whipped cream? " + hasWhippedCream +
                 "\nQuantity: " + quantity +
                 "\nTotal: " + calculatePrice() +
                 "$" + "\nThank you";
@@ -86,10 +89,9 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given quantity value on the screen.
      */
     private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        quantityTextView.setText("" + number);
+        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
+        quantityTextView.setText(number + "");
     }
-
 
 
     /**
