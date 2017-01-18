@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.edit_text_name);
         name = editText.getText().toString();
 
-
         composeEmail(name + " coffee order", createOrderSummary());
 
     }
