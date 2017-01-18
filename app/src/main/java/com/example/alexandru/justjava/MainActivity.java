@@ -85,11 +85,12 @@ public class MainActivity extends AppCompatActivity {
             quantity++;
         } else {
             Context context = getApplicationContext();
-            CharSequence text = "Max 100 cups";
+            CharSequence text = "You cannot have more than 100 coffees";
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
+            return;
         }
         display(quantity);
 
@@ -103,15 +104,16 @@ public class MainActivity extends AppCompatActivity {
             quantity--;
         } else {
             Context context = getApplicationContext();
-            CharSequence text = "Min 1 cup";
+            CharSequence text = "You cannot have less than 1 coffee";
             int duration = Toast.LENGTH_SHORT;
 
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
+            return;
         }
 
         display(quantity);
-        // displayPrice(quantity*price);
+
     }
 
 
