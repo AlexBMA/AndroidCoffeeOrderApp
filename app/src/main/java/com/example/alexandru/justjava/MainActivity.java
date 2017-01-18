@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     int price = 5;
     boolean hasWhippedCream;
     boolean hasChocolate;
+    String name;
 
 
     @Override
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         hasWhippedCream = checkBox.isChecked();
         checkBox = (CheckBox) findViewById(R.id.checkbox_chocolate);
         hasChocolate = checkBox.isChecked();
+        EditText editText = (EditText) findViewById(R.id.edit_text_name);
+        name = editText.getText().toString();
 
         String message = createOrderSummary();
         displayMessage(message);
@@ -53,10 +56,6 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private String createOrderSummary() {
-
-        EditText editText = (EditText) findViewById(R.id.edit_text_name);
-
-        String name = editText.getText().toString();
 
 
         String message = "Name: " + name +
