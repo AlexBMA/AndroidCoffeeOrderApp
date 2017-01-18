@@ -2,6 +2,7 @@ package com.example.alexandru.justjava;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -39,36 +40,22 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.edit_text_name);
         name = editText.getText().toString();
 
-        String message = createOrderSummary();
-        displayMessage(message);
 
-        composeEmail(new String[1], "", "");
-
-//        Intent intent = new Intent(Intent.ACTION_VIEW);
-//        intent.setData(Uri.parse("geo:47.6, -122.3"));
-//        if (intent.resolveActivity(getPackageManager()) != null) {
-//            Log.i("msg","here in if");
-//            startActivity(intent);
-//        }
-
+        composeEmail(name + " coffee order", createOrderSummary());
 
     }
 
     /**
-     * @param addresses the email addresses to send
      * @param subject   the subject of the email
      * @param text      the text of the mail
      */
 
-    public void composeEmail(String[] addresses, String subject, String text) {
+    public void composeEmail(String subject, String text) {
 
-        addresses[0] = "burghelea.alex@gmail.com";
-        subject = "Coffee order ";
         text = createOrderSummary();
 
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("*/*");
-        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, text);
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -167,13 +154,5 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText(number + "");
     }
 
-
-    /**
-     * This method displays a message on the screen
-     */
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
 
 }
