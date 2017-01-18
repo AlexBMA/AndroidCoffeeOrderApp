@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
 
     private String createOrderSummary() {
 
-        String name = "Alex Burghelea";
+        EditText editText = (EditText) findViewById(R.id.edit_text_name);
+
+        String name = editText.getText().toString();
 
 
         String message = "Name: " + name +
