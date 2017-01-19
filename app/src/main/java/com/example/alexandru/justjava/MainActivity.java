@@ -88,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         String message = "Name: " + name +
-                "\nAdd whipped cream? " + hasWhippedCream +
-                "\nAdd whipped cream? " + hasChocolate +
-                "\nQuantity: " + quantity +
-                "\nTotal: " + calculatePrice() +
-                "$" + "\nThank you";
+                "\n" + "Add whipped cream? " + hasWhippedCream +
+                "\n" + "Add whipped cream? " + hasChocolate +
+                "\n" + "Quantity: " + quantity +
+                "\n" + "Total: " + calculatePrice() +
+                "$" + "\n" + getString(R.string.thank_you);
 
         return message;
     }

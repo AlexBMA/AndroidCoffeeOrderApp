@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Just Java</string>
+
+    <string name="name">Name</string>
+
+    <!--Header text fro the list of toppings [CHAR LIMIT = 20] -->
+    <string name="toppings">Toppings</string>
+
+    <string name="whipped_cream">Whipped cream</string>
+
+    <string name="chocolate">Chocolate</string>
+
+    <string name="quantity">Quantity</string>
+
+    <!--Thank you message for the order summary [CHAR LIMIT = NONE] -->
+    <string name="thank_you">Thank you!</string>
+
+    <string name="order">Order</string>
 </resources>
